@@ -1,0 +1,54 @@
+<mat-toolbar class="mat-elevation-z3">
+    <!-- Menu Button for Collapsing Sidebar -->
+    <button mat-icon-button (click)="collapsed.set(!collapsed())">
+      <mat-icon>menu</mat-icon>
+    </button>
+   
+    <!-- Optional: Add a title or other items here -->
+    <span class="spacer"></span>
+   <!-- Dropdown Menu Trigger (Right Icon) -->
+    <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
+     
+    </button> -->
+    <button mat-button [matMenuTriggerFor]="translate" class="translate-button">
+      <mat-icon>translate</mat-icon>
+    </button>
+    <button mat-button [matMenuTriggerFor]="menu" class="profile-button">
+      <img src="minePicture.jpg" alt="Profile" class="profile-picture">
+    </button>
+     <!-- Horizontal Dropdown Menu -->
+     <mat-menu #translate="matMenu" >
+      <button mat-menu-item (click)="changeLanguage('en')">
+        <span>En</span>
+      </button>
+      <button mat-menu-item (click)="changeLanguage('fr')">
+        <span>Fr</span>
+      </button>
+      
+    </mat-menu>
+    <!-- Dropdown Menu -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="userTest()">
+        <mat-icon>person</mat-icon>
+        <span>{{ 'Profile' | translate }}</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>{{ 'settings' | translate }}</span>
+      </button>
+      <button mat-menu-item (click)="onLogout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>{{ 'Logout' | translate }}</span>
+      </button>
+      <!-- You can add more items here -->
+    </mat-menu>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+      <app-custom-sidenav [collapsed] = 'collapsed()'/>
+    </mat-sidenav>
+    <mat-sidenav-content class = "content" [style.margin-left]="sidenavWidth()">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

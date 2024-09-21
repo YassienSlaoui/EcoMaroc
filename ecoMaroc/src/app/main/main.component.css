@@ -1,0 +1,35 @@
+.content{
+    padding: 24px;
+}
+mat-toolbar{
+    position: relative;
+    z-index: 5;
+}
+mat-sidenav-container {
+    height: calc(100vh - 64px);
+}
+mat-sidenav , 
+mat-sidenav-content {
+    transition: all 500ms ease-in-out;
+}
+.spacer {
+    flex: 1 1 auto;  
+}
+.profile-button {
+    padding: 0;
+    min-width: auto;
+}
+.profile-picture {
+    width: 36px; /* Adjust size as needed */
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.translate-button{
+    margin-bottom: 10px;
+    margin-right: 20px;
+    min-width: auto;
+    left: -10px;
+}
+
