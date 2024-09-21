@@ -31,3 +31,9 @@ Configuration & Help:
 
 ng config <key> <value>: Set configuration values in the Angular CLI.
 ng help: List available commands and options in the Angular CLI.
+
+
+node --version
+v20.11.0
+
+java 17
